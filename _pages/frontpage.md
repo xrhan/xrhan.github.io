@@ -1,7 +1,7 @@
 ---
 permalink: /
 layout: home
-title: Xinran Nicole Han
+list_title: About me
 list_title: Publications
 ---
 <img src="./assets/imgs/screenshot.png" width="400px">
