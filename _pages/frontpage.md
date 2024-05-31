@@ -21,7 +21,7 @@ Specifically, I enjoy working on methods that combine learning based approach wi
 ## Selected Publications
 
 <div class="publication-entry">
-  <img src="./assets/imgs/paper1-thumbnail.jpg" alt="Paper 1 Thumbnail">
+  <img src="./assets/imgs/papers/mphd.png" alt="Paper 1 Thumbnail">
   <div>
     <strong>Transfer Learning for Bayesian Optimization on Heterogeneous Search Spaces</strong><br>
     Zhou Fan, <b>Xinran Han</b>, Zi Wang<br>
@@ -31,7 +31,7 @@ Specifically, I enjoy working on methods that combine learning based approach wi
 </div>
 
 <div class="publication-entry">
-  <img src="./assets/imgs/paper1-thumbnail.jpg" alt="Paper 1 Thumbnail">
+  <img src="./assets/imgs/papers/curvaturefields.pdf" alt="Paper 1 Thumbnail">
   <div>
     <strong>Curvature Fields from Shading Fields</strong><br>
     <b>Xinran Han</b>, Todd Zickler<br>
@@ -41,17 +41,17 @@ Specifically, I enjoy working on methods that combine learning based approach wi
 </div>
 
 <div class="publication-entry">
-  <img src="./assets/imgs/paper1-thumbnail.jpg" alt="Paper 1 Thumbnail">
+  <img src="./assets/imgs/papers/bw_blank.png" alt="Paper 1 Thumbnail">
   <div>
     <strong>Compositional Data and Task Augmentation for Instruction Following</strong><br>
     Soham Dan*, <b>Xinran Han*</b>, Dan Roth (* equal contribution)<br> 
-    Findings of EMNLP 2021.<br>
+    Findings of EMNLP, 2021.<br>
     <a href="https://aclanthology.org/2021.findings-emnlp.178/">Paper</a>
   </div>
 </div>
 
 <div class="publication-entry">
-  <img src="./assets/imgs/paper1-thumbnail.jpg" alt="Paper 1 Thumbnail">
+  <img src="./assets/imgs/papers/framework.jpg" alt="Paper 1 Thumbnail">
   <div>
     <strong>ForkGAN: Seeing into the Rainy Night</strong><br>
     Ziqiang Zheng, Yang Wu, <b>Xinran Han</b>, Jianbo Shi<br>
@@ -62,7 +62,7 @@ Specifically, I enjoy working on methods that combine learning based approach wi
 
 
 # Miscellaneous
-Outside of research, I am a big fan of art history and enjoy visiting art museums, watching movies and learning philosophy and psychology.
+Outside of research, I am a big fan of art history and enjoy visiting art museums, watching movies and reading philosophy and psychology.
 
 
 [todd]:http://www.eecs.harvard.edu/~zickler/Main/HomePage
