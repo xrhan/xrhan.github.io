@@ -16,6 +16,29 @@ Previously, I graduated from the University of Pennsylvania majoring in Mathemat
 
 I am interested in computer vision, artificial intelligence and human perception/cognition.
 
+### Publications
+
+<div class="publication-entry">
+  <img src="./assets/imgs/paper1-thumbnail.jpg" alt="Paper 1 Thumbnail">
+  <div>
+    <strong>Title of Paper 1</strong><br>
+    Journal Name, Year<br>
+    Authors: Author1, Author2, Author3<br>
+    <a href="link-to-paper1.pdf">Download PDF</a>
+  </div>
+</div>
+
+<div class="publication-entry">
+  <img src="./assets/imgs/paper2-thumbnail.jpg" alt="Paper 2 Thumbnail">
+  <div>
+    <strong>Title of Paper 2</strong><br>
+    Conference Name, Year<br>
+    Authors: Author1, Author2, Author3<br>
+    <a href="link-to-paper2.pdf">Download PDF</a>
+  </div>
+</div>
+
+
 # Miscellaneous
 Outside of research, I enjoy visiting art museums, watching movies and learning philosophy and psychology.
 

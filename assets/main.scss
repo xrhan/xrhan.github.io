@@ -25,3 +25,20 @@ body {
     height: 200px; /* Ensure the height matches the width to maintain the circular shape */
     object-fit: cover; /* This ensures the image covers the entire circle without distortion */
   }
+
+.publication-entry {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem; /* Adjust the spacing between entries as needed */
+  }
+  
+ .publication-entry img {
+    margin-right: 1rem; /* Adjust the space between the image and the text */
+    width: 100px; /* Adjust the image width as needed */
+    height: auto; /* Ensure the image maintains its aspect ratio */
+    border-radius: 5%; /* Optional: add some rounding to the image corners */
+  }
+  
+.publication-entry div {
+    flex: 1;
+  }
