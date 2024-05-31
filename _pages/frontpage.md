@@ -1,13 +1,24 @@
 ---
 permalink: /
 layout: home
-list_title: About me
 ---
-<img src="./assets/imgs/screenshot.png" width="400px">
 
-I am a PhD student at Harvard University, advised by Prof. Todd Zickler. I also work closely with Prof. Ko Nishino and spent two wonderful summers in Kyoto.
-Previously, I graduated from University of Pennsylvania with majoring in Mathematics and Computer Science. During my undergrad, I was fortunate to work with Prof. Jianbo Shi and Prof. Dan Roth.
+<div style="text-align: center;">
+  <img src="./assets/imgs/lantern.jpg" class="center-circle">
+</div>
+
+I am a PhD student at Harvard University, advised by Prof. [Todd Zickler][todd]. I also work closely with Prof. [Ko Nishino][nishino] and have spent two wonderful summers in Kyoto.
+Previously, I graduated from the University of Pennsylvania majoring in Mathematics and Computer Science. During my undergrad, I was fortunate to work with Prof. [Jianbo Shi][jianbo] and Prof. [Dan Roth][danroth].
 
 # Research
 
-I am interested in computer vision and artificial intelligence. 
+I am interested in computer vision, artificial intelligence and human cognition.
+
+# Miscellaneous
+Outside of research, I enjoy visiting art museums, watching movies and learning philosophy and psychology.
+
+
+[todd]:http://www.eecs.harvard.edu/~zickler/Main/HomePage
+[nishino]:https://vision.ist.i.kyoto-u.ac.jp
+[jianbo]:https://www.cis.upenn.edu/~jshi/
+[danroth]:https://cogcomp.seas.upenn.edu

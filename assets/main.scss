@@ -15,3 +15,13 @@ body {
     border-radius: 50%;
     object-fit: cover;
 }
+
+.center-circle {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 200px; /* Adjust the width as needed */
+    height: 200px; /* Ensure the height matches the width to maintain the circular shape */
+    object-fit: cover; /* This ensures the image covers the entire circle without distortion */
+  }
