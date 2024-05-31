@@ -7,12 +7,17 @@ layout: home
   <img src="./assets/imgs/lantern.jpg" class="center-circle">
 </div>
 
+<br/><br/>
+
+<div style="text-align: center;">
 I am a PhD student at Harvard University, advised by Prof. [Todd Zickler][todd]. I also work closely with Prof. [Ko Nishino][nishino] and have spent two wonderful summers in Kyoto.
-Previously, I graduated from the University of Pennsylvania majoring in Mathematics and Computer Science. During my undergrad, I was fortunate to work with Prof. [Jianbo Shi][jianbo] and Prof. [Dan Roth][danroth].
+
+Previously, I graduated from the University of Pennsylvania majoring in Mathematics and Computer Science. During my undergrad, I was fortunate to work with Prof. [Jianbo Shi][jianbo] and Prof. [Dan Roth][danroth]. 
+</div>
 
 # Research
 
-I am interested in computer vision, artificial intelligence and human cognition.
+I am interested in computer vision, artificial intelligence and human perception/cognition.
 
 # Miscellaneous
 Outside of research, I enjoy visiting art museums, watching movies and learning philosophy and psychology.
