@@ -8,11 +8,9 @@ layout: home
 </div>
 
 <br/><br/>
+<p style="text-align: center;"> I am a PhD student at Harvard University, advised by Prof. [Todd Zickler](http://www.eecs.harvard.edu/~zickler/Main/HomePage). I also work closely with Prof. [Ko Nishino](https://vision.ist.i.kyoto-u.ac.jp) and have spent two wonderful summers in Kyoto.</p>
 
-
-<p style="text-align: center;"> I am a PhD student at Harvard University, advised by Prof. [Todd Zickler][todd]. I also work closely with Prof. [Ko Nishino][nishino] and have spent two wonderful summers in Kyoto.</p>
-
-<p style="text-align: center;">  Previously, I graduated from the University of Pennsylvania majoring in Mathematics and Computer Science. During my undergrad, I was fortunate to work with Prof. [Jianbo Shi][jianbo] and Prof. [Dan Roth][danroth].</p>
+<p style="text-align: center;">  Previously, I graduated from the University of Pennsylvania majoring in Mathematics and Computer Science. During my undergrad, I was fortunate to work with Prof. [Jianbo Shi](https://www.cis.upenn.edu/~jshi/) and Prof. [Dan Roth](https://cogcomp.seas.upenn.edu).</p>
 
 # Research
 
