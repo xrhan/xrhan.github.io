@@ -14,9 +14,41 @@ Previously, I graduated from the University of Pennsylvania majoring in Mathemat
 
 # Research
 
-I am interested in computer vision, artificial intelligence and human perception/cognition.
+I am interested in computer vision, artificial intelligence and human perception/cognition. 
 
-## Publications
+Specifically, I enjoy working on methods that combine learning based approach with physics-aware guidance and inspirations from human visual system. I'm also interested in the intersection of vision with language and art.
+
+## Selected Publications
+
+<div class="publication-entry">
+  <img src="./assets/imgs/paper1-thumbnail.jpg" alt="Paper 1 Thumbnail">
+  <div>
+    <strong>Transfer Learning for Bayesian Optimization on Heterogeneous Search Spaces</strong><br>
+    Zhou Fan, <b>Xinran Han</b>, Zi Wang<br>
+    Transactions on Machine Learning Research (TMLR), February 2024<br>
+    <a href="https://arxiv.org/abs/2309.16597">Paper</a>
+  </div>
+</div>
+
+<div class="publication-entry">
+  <img src="./assets/imgs/paper1-thumbnail.jpg" alt="Paper 1 Thumbnail">
+  <div>
+    <strong>Curvature Fields from Shading Fields</strong><br>
+    <b>Xinran Han</b>, Todd Zickler<br>
+    Proceedings of the NeurIPS Workshop on Symmetry and Geometry in Neural Representations, PMLR 228, 2023<br>
+    <a href="https://openreview.net/pdf?id=4OSJeCAMi6">Paper</a>
+  </div>
+</div>
+
+<div class="publication-entry">
+  <img src="./assets/imgs/paper1-thumbnail.jpg" alt="Paper 1 Thumbnail">
+  <div>
+    <strong>Compositional Data and Task Augmentation for Instruction Following</strong><br>
+    Soham Dan*, <b>Xinran Han*</b>, Dan Roth (* equal contribution)<br> 
+    Findings of EMNLP 2021.<br>
+    <a href="https://aclanthology.org/2021.findings-emnlp.178/">Paper</a>
+  </div>
+</div>
 
 <div class="publication-entry">
   <img src="./assets/imgs/paper1-thumbnail.jpg" alt="Paper 1 Thumbnail">
@@ -28,19 +60,9 @@ I am interested in computer vision, artificial intelligence and human perception
   </div>
 </div>
 
-<div class="publication-entry">
-  <img src="./assets/imgs/paper2-thumbnail.jpg" alt="Paper 2 Thumbnail">
-  <div>
-    <strong>Title of Paper 2</strong><br>
-    Conference Name, Year<br>
-    Authors: Author1, Author2, Author3<br>
-    <a href="link-to-paper2.pdf">Download PDF</a>
-  </div>
-</div>
-
 
 # Miscellaneous
-Outside of research, I enjoy visiting art museums, watching movies and learning philosophy and psychology.
+Outside of research, I am a big fan of art history and enjoy visiting art museums, watching movies and learning philosophy and psychology.
 
 
 [todd]:http://www.eecs.harvard.edu/~zickler/Main/HomePage
