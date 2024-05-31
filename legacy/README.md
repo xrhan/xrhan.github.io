@@ -1,2 +1,0 @@
-# xrhan.github.io
-; )
