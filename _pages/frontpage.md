@@ -16,15 +16,15 @@ Previously, I graduated from the University of Pennsylvania majoring in Mathemat
 
 I am interested in computer vision, artificial intelligence and human perception/cognition.
 
-### Publications
+## Publications
 
 <div class="publication-entry">
   <img src="./assets/imgs/paper1-thumbnail.jpg" alt="Paper 1 Thumbnail">
   <div>
-    <strong>Title of Paper 1</strong><br>
-    Journal Name, Year<br>
-    Authors: Author1, Author2, Author3<br>
-    <a href="link-to-paper1.pdf">Download PDF</a>
+    <strong>ForkGAN: Seeing into the Rainy Night</strong><br>
+    Ziqiang Zheng, Yang Wu, Xinran Han, Jianbo Shi<br>
+    European Conference on Computer Vision (ECCV), 2020 (Oral, top 2%)<br>
+    <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123480154.pdf">Paper</a><a href="https://www.youtube.com/watch?v=O2nxRsSwkzs">Talk</a>
   </div>
 </div>
 
