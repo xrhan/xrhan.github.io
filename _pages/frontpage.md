@@ -4,7 +4,7 @@ layout: home
 ---
 
 <div style="text-align: center;">
-  <img src="./assets/imgs/lantern.jpg" class="center-circle">
+  <img src="./assets/imgs/personal/summer.JPG" class="center-circle">
 </div>
 
 <br/><br/>
@@ -16,7 +16,7 @@ Previously, I graduated from the University of Pennsylvania majoring in Mathemat
 
 I am interested in computer vision, artificial intelligence and human perception/cognition. 
 
-Specifically, I enjoy working on methods that combine learning based approach with physics-aware guidance and inspirations from human visual system. I'm also interested in the intersection of vision with language and art.
+Specifically, I enjoy building models that combine learning based approach with physics intuition and inspirations from the human visual system. I'm also interested in the intersection of vision with language and art.
 
 ## Selected Publications
 
@@ -31,7 +31,7 @@ Specifically, I enjoy working on methods that combine learning based approach wi
 </div>
 
 <div class="publication-entry">
-  <img src="./assets/imgs/papers/curvaturefields.pdf" alt="Paper 1 Thumbnail">
+  <img src="./assets/imgs/papers/curvaturefields.png" alt="Paper 1 Thumbnail">
   <div>
     <strong>Curvature Fields from Shading Fields</strong><br>
     <b>Xinran Han</b>, Todd Zickler<br>
