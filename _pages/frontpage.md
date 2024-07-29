@@ -14,7 +14,7 @@ Previously, I graduated from the University of Pennsylvania majoring in Mathemat
 
 # Research
 
-I am interested in computer vision, artificial intelligence and human perception/cognition. 
+My research interests include 3D computer vision, generative models and multi-modal learning.
 
 Specifically, I enjoy building models that combine learning based approach with physics intuition and inspirations from the human visual system. I'm also interested in the intersection of vision with language and art.
 
@@ -62,7 +62,7 @@ Specifically, I enjoy building models that combine learning based approach with 
 
 
 # Miscellaneous
-Outside of research, I am a big fan of art history and enjoy visiting art museums, watching movies and reading philosophy and psychology.
+Outside of research, I enjoy visiting art museums, watching movies and reading about philosophy and psychology.
 
 
 [todd]:http://www.eecs.harvard.edu/~zickler/Main/HomePage
