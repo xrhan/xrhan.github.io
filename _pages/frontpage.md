@@ -20,6 +20,7 @@ Specifically, I enjoy building models that combine learning based approach with 
 
 ## Selected Publications
 
+<div style="border: 2px solid orange; padding: 10px; border-radius: 5px;">
 <div class="publication-entry">
   <img src="./assets/imgs/papers/mphd.png" alt="Paper 1 Thumbnail">
   <div>
@@ -28,6 +29,7 @@ Specifically, I enjoy building models that combine learning based approach with 
     Transactions on Machine Learning Research (TMLR), February 2024<br>
     <a href="https://arxiv.org/abs/2309.16597">Paper</a>
   </div>
+</div>
 </div>
 
 <div class="publication-entry">
