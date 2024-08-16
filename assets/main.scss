@@ -1,7 +1,7 @@
 ---
 ---
 
-@import "minima";
+theme: minima
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 body {
@@ -41,4 +41,8 @@ body {
   
 .publication-entry div {
     flex: 1;
+  }
+
+  b {
+    font-weight: bold;
   }
