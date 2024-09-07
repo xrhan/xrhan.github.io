@@ -19,7 +19,6 @@ My current research interests include 3D computer vision, generative models and 
 Specifically, I enjoy building models that combine learning based approach with physics intuition and inspirations from the human visual system. I'm also interested in the intersection of vision with language and art.
 
 ## Selected Publications
-<div style="border: 2px solid orange; padding: 10px; border-radius: 5px;">
 <div class="publication-entry">
   <img src="./assets/imgs/papers/multistable.png" alt="Paper 1 Thumbnail">
   <div>
@@ -29,9 +28,7 @@ Specifically, I enjoy building models that combine learning based approach with 
     <a href="https://arxiv.org/pdf/2405.14530">Paper</a>
   </div>
 </div>
-</div>
 
-<div style="border: 2px solid orange; padding: 10px; border-radius: 5px;">
 <div class="publication-entry">
   <img src="./assets/imgs/papers/mphd.png" alt="Paper 2 Thumbnail">
   <div>
@@ -40,7 +37,6 @@ Specifically, I enjoy building models that combine learning based approach with 
     Transactions on Machine Learning Research (TMLR), February 2024<br>
     <a href="https://arxiv.org/abs/2309.16597">Paper</a>
   </div>
-</div>
 </div>
 
 <div class="publication-entry">
@@ -64,7 +60,7 @@ Specifically, I enjoy building models that combine learning based approach with 
 </div>
 
 <div class="publication-entry">
-  <img src="./assets/imgs/papers/framework.jpg" alt="Paper 5 Thumbnail">
+  <img src="./assets/imgs/papers/forkgan.png" alt="Paper 5 Thumbnail">
   <div>
     <strong>ForkGAN: Seeing into the Rainy Night</strong><br>
     Ziqiang Zheng, Yang Wu, <b>Xinran Han</b>, Jianbo Shi<br>
