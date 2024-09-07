@@ -4,7 +4,7 @@ layout: home
 ---
 
 <div style="text-align: center;">
-  <img src="./assets/imgs/personal/personal_photo.jpg" class="center-circle">
+  <img src="./assets/imgs/personal/photo.jpg" class="center-circle">
 </div>
 
 <br/><br/>
