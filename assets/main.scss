@@ -1,11 +1,11 @@
 ---
 ---
 
-theme: minima
+@import "minima";
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 body {
-    font-family: 'Lato';
+    font-family: 'Montserrat', sans-serif;
     color: #383838;
 }
 
@@ -41,8 +41,4 @@ body {
   
 .publication-entry div {
     flex: 1;
-  }
-
-  b {
-    font-weight: bold;
   }
