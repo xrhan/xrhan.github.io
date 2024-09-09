@@ -23,7 +23,7 @@ Specifically, I enjoy building models that combine learning based approach with 
   <img src="./assets/imgs/papers/multistable.png" alt="Paper 1 Thumbnail">
   <div>
     <strong>Multistable Shape from Shading Emerges from Patch Diffusion</strong><br>
-    <b>Xinran Nicole Han</b>, Todd Zickler, Ko Nishino<br>
+    <u>Xinran Nicole Han</u>, Todd Zickler, Ko Nishino<br>
     <small>Preprint, 2024</small><br>
     <em><small>TL;DR: We present a bottom-up, patch-based diffusion model for monocular shape from shading that produces multimodal outputs, similar to multistable perception in humans.</small></em><br>
     <a href="https://arxiv.org/pdf/2405.14530">Paper</a>
@@ -34,7 +34,7 @@ Specifically, I enjoy building models that combine learning based approach with 
   <img src="./assets/imgs/papers/mphd.png" alt="Paper 2 Thumbnail">
   <div>
     <strong>Transfer Learning for Bayesian Optimization on Heterogeneous Search Spaces</strong><br>
-    Zhou Fan, <b>Xinran Han</b>, Zi Wang<br>
+    Zhou Fan, <u>Xinran Han</u>, Zi Wang<br>
     <small>Transactions on Machine Learning Research (TMLR), February 2024</small><br>
     <a href="https://arxiv.org/abs/2309.16597">Paper</a>
   </div>
@@ -44,7 +44,7 @@ Specifically, I enjoy building models that combine learning based approach with 
   <img src="./assets/imgs/papers/curvaturefields.png" alt="Paper 3 Thumbnail">
   <div>
     <strong>Curvature Fields from Shading Fields</strong><br>
-    <b>Xinran Han</b>, Todd Zickler<br>
+    <u>Xinran Han</u>, Todd Zickler<br>
     <small>Proceedings of the NeurIPS Workshop on Symmetry and Geometry in Neural Representations, PMLR 228, 2023</small><br>
     <em><small>TL;DR: We present a neural model for inferring a curvature field from shading images that is invariant under lighting and texture variations, drawing on perceptual insights and mathematical derivations.</small></em><br>
     <a href="https://openreview.net/pdf?id=4OSJeCAMi6">Paper</a>
@@ -55,7 +55,7 @@ Specifically, I enjoy building models that combine learning based approach with 
   <img src="./assets/imgs/papers/bw_blank.png" alt="Paper 4 Thumbnail">
   <div>
     <strong>Compositional Data and Task Augmentation for Instruction Following</strong><br>
-    Soham Dan*, <b>Xinran Han*</b>, Dan Roth (* equal contribution)<br> 
+    Soham Dan*, <u>Xinran Han*</u>, Dan Roth (* equal contribution)<br> 
     <small>Findings of EMNLP, 2021.</small><br>
     <a href="https://aclanthology.org/2021.findings-emnlp.178/">Paper</a>
   </div>
@@ -65,7 +65,7 @@ Specifically, I enjoy building models that combine learning based approach with 
   <img src="./assets/imgs/papers/forkgan.png" alt="Paper 5 Thumbnail">
   <div>
     <strong>ForkGAN: Seeing into the Rainy Night</strong><br>
-    Ziqiang Zheng, Yang Wu, <b>Xinran Han</b>, Jianbo Shi<br>
+    Ziqiang Zheng, Yang Wu, <u>Xinran Han</u>, Jianbo Shi<br>
     <small>European Conference on Computer Vision (ECCV), 2020 (Oral, top 2%)</small><br>
     <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123480154.pdf">Paper | </a><a href="https://www.youtube.com/watch?v=O2nxRsSwkzs">Talk</a>
   </div>
