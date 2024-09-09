@@ -25,6 +25,7 @@ Specifically, I enjoy building models that combine learning based approach with 
     <strong>Multistable Shape from Shading Emerges from Patch Diffusion</strong><br>
     <b>Xinran Nicole Han</b>, Todd Zickler, Ko Nishino<br>
     Preprint, 2024<br>
+    TL;DR: We present a bottom-up, patch-based diffusion model for monocular shape from shading that produces multimodal outputs, similar to multistable perception in humans.<br>
     <a href="https://arxiv.org/pdf/2405.14530">Paper</a>
   </div>
 </div>
@@ -45,6 +46,7 @@ Specifically, I enjoy building models that combine learning based approach with 
     <strong>Curvature Fields from Shading Fields</strong><br>
     <b>Xinran Han</b>, Todd Zickler<br>
     Proceedings of the NeurIPS Workshop on Symmetry and Geometry in Neural Representations, PMLR 228, 2023<br>
+    TL;DR: We present a neural model for inferring a curvature field from shading images that is invariant under lighting and texture variations, drawing on perceptual insights and mathematical derivations.<br>
     <a href="https://openreview.net/pdf?id=4OSJeCAMi6">Paper</a>
   </div>
 </div>
