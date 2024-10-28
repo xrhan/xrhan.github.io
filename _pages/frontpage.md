@@ -67,7 +67,7 @@ Specifically, I enjoy building models that combine learning based approach with 
     <strong>ForkGAN: Seeing into the Rainy Night</strong><br>
     Ziqiang Zheng, Yang Wu, <u>Xinran Han</u>, Jianbo Shi<br>
     <small>European Conference on Computer Vision (ECCV), 2020 (Oral, top 2%)</small><br>
-    <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123480154.pdf">Paper | </a><a href="https://www.youtube.com/watch?v=O2nxRsSwkzs">Talk</a>
+    <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123480154.pdf">Paper</a> | <a href="https://www.youtube.com/watch?v=O2nxRsSwkzs">Talk</a>
   </div>
 </div>
 
