@@ -26,7 +26,7 @@ Specifically, I enjoy building models that combine learning based approach with 
     <u>Xinran Nicole Han</u>, Todd Zickler, Ko Nishino<br>
     <small>Advances in Neural Information Processing Systems (NeurIPS), 2024 (Spotlight)</small><br>
     <em><small>TL;DR: We present a bottom-up, patch-based diffusion model for monocular shape from shading that produces multimodal outputs, similar to multistable perception in humans.</small></em><br>
-    <a href="https://arxiv.org/pdf/2405.14530">Paper</a> | </a><a href="https://vision.ist.i.kyoto-u.ac.jp/research/mssfs/">Project</a>
+    <a href="https://arxiv.org/pdf/2405.14530">Paper</a> | <a href="https://vision.ist.i.kyoto-u.ac.jp/research/mssfs/">Project</a>
   </div>
 </div>
 
