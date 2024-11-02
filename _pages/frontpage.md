@@ -14,7 +14,7 @@ Previously, I graduated from the University of Pennsylvania majoring in Mathemat
 
 # Research
 
-My current research interests include 3D computer vision, generative models and multi-modal learning.
+My current research interests include computer vision, generative models and multi-modal learning.
 
 Specifically, I enjoy building models that combine learning based approach with physics intuition and inspirations from the human visual system. I'm also interested in the intersection of vision with language and art.
 
