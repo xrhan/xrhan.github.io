@@ -22,6 +22,17 @@ Specifically, I enjoy building models that combine learning based approach with 
 <div class="publication-entry">
   <img src="./assets/imgs/papers/multistable.png" alt="Paper 1 Thumbnail">
   <div>
+    <strong>Generative Perception of Shape and Material from Differential Motion</strong><br>
+    <u>Xinran Nicole Han</u>, Ko Nishino, Todd Zickler<br>
+    <small>Preprint</small><br>
+    <em><small>TL;DR: We introduce a generative perception model that, given a few frames of an object undergoing motion, produces diverse and plausible interpretations of its shape and material—including texture and reflectance—through feedforward stochastic sampling.</small></em><br>
+    <a href="https://arxiv.org/pdf/2506.02473">Paper</a> | <a href="https://xr.github.io/diffmotion/index.html/">Project</a> | Code
+  </div>
+</div>
+
+<div class="publication-entry">
+  <img src="./assets/imgs/papers/multistable.png" alt="Paper 1 Thumbnail">
+  <div>
     <strong>Multistable Shape from Shading Emerges from Patch Diffusion</strong><br>
     <u>Xinran Nicole Han</u>, Todd Zickler, Ko Nishino<br>
     <small>Advances in Neural Information Processing Systems (NeurIPS), 2024 (Spotlight)</small><br>
