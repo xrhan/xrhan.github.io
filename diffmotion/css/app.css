@@ -160,17 +160,6 @@ span.highlight {
 	margin-right: 0.5em;
 }
 
-.author-table, th, td {
-    table-layout: fixed;
-    vertical-align: top;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: none;
-    width: auto;
-    min-width: 50%;
-    padding: 3px;
-}
-
 .video-compare-container {
   width: 63%;
   margin: 0 auto;
@@ -202,4 +191,17 @@ span.highlight {
     width: 100%;
     overflow:hidden;
     display:block;
+}
+
+/* 1) Center the table by text-align on the parent */
+#author-row {
+  text-align: center !important;
+}
+
+/* 2) Make the table inline-table so it obeys text-align centering
+     and still supports border-spacing */
+#author-row .author-table {
+  display: inline-table !important;
+  border-collapse: separate !important;
+  border-spacing: 3rem !important;   /* horizontal + vertical gap */
 }
