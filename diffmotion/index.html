@@ -219,10 +219,9 @@ complete physical attributes of object appearance--namely shape, texture, and re
     <h3>Results Visualizations</h3>
       <div class="text-justify">
       We visualize the input video sequence, predicted surface normal and albedo (diffuse color) from a moving object. 
-      Input videos are synthetically rendered using physics-based rendering engine.<br><br>
+      Input videos are synthetically rendered using physics-based rendering engine (1,2) or captured real world objects (3).<br><br>
       (1) Objects with synthetic textures:<br><br>
     </div>
-    
     <!-- Row of 3 videos -->
     <div class="row">
       <div class="col-md-4 video-wrapper text-center">
@@ -252,8 +251,27 @@ complete physical attributes of object appearance--namely shape, texture, and re
         <video class="video" id="e6" loop playsinline autoPlay muted src="video/spoon.mp4" onplay="resizeAndPlay(this)"></video>
       </div>
     </div>
+
+      (3) Captured real-world objects motion videos:<br><br>
+    </div>
+    <!-- Row of 3 videos -->
+    <div class="row">
+      <div class="col-md-4 video-wrapper text-center">
+        <video class="video" id="e1" loop playsinline autoPlay muted src="video/ducky.mp4" onplay="resizeAndPlay(this)"></video>
+      </div>
+      <div class="col-md-4 video-wrapper text-center">
+        <video class="video" id="e2" loop playsinline autoPlay muted src="video/elephant.mp4" onplay="resizeAndPlay(this)"></video>
+      </div>
+      <div class="col-md-4 video-wrapper text-center">
+        <video class="video" id="e3" loop playsinline autoPlay muted src="video/vase.mp4" onplay="resizeAndPlay(this)"></video>
+      </div>
+    </div>
+
   </div>
   </div>
+  
+  
+  
   <div class="row"> 
   <div class="col-md-8 col-md-offset-2" id="video-section">
     <h3>Motion Disambiguation - Perception Test</h3>
