@@ -24,7 +24,7 @@ Specifically, I enjoy building models that combine learning based approach with 
   <div>
     <strong>Generative Perception of Shape and Material from Differential Motion</strong><br>
     <u>Xinran Nicole Han</u>, Ko Nishino, Todd Zickler<br>
-    <small>Preprint</small><br>
+    <small>NeurIPS, 2025</small><br>
     <em><small>TL;DR: We introduce a generative perception model that, given a few frames of an object undergoing motion, produces diverse and plausible interpretations of its shape and material.</small></em><br>
     <a href="https://arxiv.org/pdf/2506.02473">Paper</a> | <a href="/diffmotion/">Project</a> | <a href="https://github.com/xrhan/diffmotion">Code</a>
   </div>
