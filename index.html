@@ -1,0 +1,330 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Xinran Nicole Han</title>
+
+    <meta name="author" content="Xinran (Nicole) Han">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    
+  </head>
+
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p class="name" style="text-align: center;">
+                  Xinran (Nicole) Han
+                </p>
+                <p>
+		I am a PhD student at Harvard University, advised by Prof. <a href="http://www.eecs.harvard.edu/~zickler/Main/HomePage">Todd Zickler</a>.
+		I also work closely with Prof. <a href="https://vision.ist.i.kyoto-u.ac.jp">Ko Nishino</a> and have spent two wonderful summers in Kyoto.
+    <br></br>
+    Email: xinranhan [at] g [dot] harvard [dot] edu
+    <br></br>
+    Previously, I graduated from the University of Pennsylvania majoring in Mathematics and Computer Science. 
+    During my undergrad, I was fortunate to work with Prof. <a href="https://www.cis.upenn.edu/~jshi/">Jianbo Shi</a> 
+    and Prof. <a href="https://cogcomp.seas.upenn.edu">Dan Roth</a>.
+                </p>
+                <p style="text-align:center">
+                  <a href="https://scholar.google.com/citations?user=_XGFQGAAAAAJ&hl=en">Google Scholar</a> &nbsp;/&nbsp;
+                  <a href="https://twitter.com/nahelocin">Twitter</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/xrhan/">Github</a>
+                </p>
+              </td>
+              <td style="padding:2.5%;width:24%;max-width:20%">
+                <a href="images/personal/photo.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/personal/photo.jpg" class="hoverZoomLink"></a>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+              <td style="padding:16px;width:100%;vertical-align:middle">
+                <h2>Research</h2>
+                <p>
+                  My current research interests include computer vision, generative models and multi-modal learning. 
+                  <br></br>
+                  Specifically, I enjoy building models that combine learning based approach with physics modeling and inspirations 
+                  from the human visual system. I'm also interested in the intersection of vision with language and art.
+                  Some papers are <span class="highlight">highlighted</span>.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+
+    <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()"  bgcolor="#efeafd">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='bolt3d_image'><video  width=100% height=100% muted autoplay loop>
+          <source src="images/diffmotion_stacked.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+
+          </video></div>
+          <img src='images/diffmotion_static.png' width="160">
+        </div>
+        <script type="text/javascript">
+          function bolt3d_start() {
+            document.getElementById('bolt3d_image').style.opacity = "1";
+          }
+
+          function bolt3d_stop() {
+            document.getElementById('bolt3d_image').style.opacity = "0";
+          }
+          bolt3d_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://xrhan.github.io/diffmotion/">
+          <span class="papertitle">Generative Perception of Shape and Material from Differential Motion</span>
+        </a>
+        <br>
+		<strong>Xinran (Nicole) Han</strong>, Ko Nishino, Todd Zickler
+        <br>
+        <em>NeurIPS</em>, 2025
+        <br>
+        <a href="https://xrhan.github.io/diffmotion/">project page</a>
+        /
+        <a href="https://arxiv.org/pdf/2506.02473">paper</a>
+        /
+        <a href="https://github.com/xrhan/diffmotion">code</a>
+        <p></p>
+        <p>
+		    We introduce a pixel-space video diffusion backbone with hybrid local–global attention that, from just a few frames of an object in motion, 
+        simultaneously estimates plausible shape and material.
+        </p>
+      </td>
+    </tr>
+
+    <tr onmouseout="patch_stop()" onmouseover="patch_start()" bgcolor="#efeafd">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='patch_image'>
+          <img src="images/patchdiff_after.png" width="160">
+          </div>
+          <img src='images/patchdiff_before.png' width="160">
+        </div>
+        <script type="text/javascript">
+          function patch_start() {
+            document.getElementById('patch_image').style.opacity = "1";
+          }
+
+          function patch_stop() {
+            document.getElementById('patch_image').style.opacity = "0";
+          }
+          patch_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://vision.ist.i.kyoto-u.ac.jp/research/mssfs/">
+			<span class="papertitle">Multistable Shape from Shading Emerges from Patch Diffusion
+</span>
+        </a>
+        <br>
+				<strong>Xinran (Nicole) Han</strong>, Todd Zickler, Ko Nishino
+        <br>
+        <em>NeurIPS</em>, 2024 &nbsp <font color="red"><strong>(Spotlight)</strong></font>
+        <br>
+        <a href="https://vision.ist.i.kyoto-u.ac.jp/research/mssfs/">project page</a>
+        /
+        <a href="https://arxiv.org/pdf/2405.14530">paper</a>
+        /
+        <a href="https://github.com/xrhan/mssfs">code</a>
+        <p></p>
+        <p>
+        We present a bottom-up, patch-based diffusion model for monocular shape from shading that produces multimodal outputs, 
+        similar to multistable perception in humans.        
+      </p>
+      </td>
+    </tr>
+
+    <tr onmouseout="gp_stop()" onmouseover="gp_start()">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='gp_image'>
+					  <img src='images/gp.png' width=100%>
+					</div>
+          <img src='images/gp.png' width=100%>
+        </div>
+        <script type="text/javascript">
+          function gp_start() {
+            document.getElementById('gp_image').style.opacity = "1";
+          }
+
+          function gp_stop() {
+            document.getElementById('gp_image').style.opacity = "0";
+          }
+          gp_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://arxiv.org/abs/2309.16597">
+			<span class="papertitle">Transfer Learning for Bayesian Optimization on Heterogeneous Search Spaces
+</span>
+        </a>
+        <br>
+        Zhou Fan,
+				<strong>Xinran Han</strong>,
+        Zi Wang
+				<br>
+        <em>Transactions on Machine Learning Research (TMLR)</em>, February 2024
+        <br>
+        <a href="https://arxiv.org/abs/2309.16597">paper</a>
+        <p></p>
+        <p>
+          We present new theoretical insight on the equivalence of multi-task and single-task learning 
+          for stationary kernels and develop MPHD for model pre-training on heterogeneous domains.
+        </p>
+      </td>
+    </tr>
+
+    <tr onmouseout="curv_stop()" onmouseover="curv_start()">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='curv_image'>
+          <img src="images/curv_after.png" width="160">
+          </div>
+          <img src='images/curv_before.png' width="160">
+        </div>
+        <script type="text/javascript">
+          function curv_start() {
+            document.getElementById('curv_image').style.opacity = "1";
+          }
+
+          function curv_stop() {
+            document.getElementById('curv_image').style.opacity = "0";
+          }
+          curv_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://openreview.net/pdf?id=4OSJeCAMi6">
+          <span class="papertitle">Curvature Fields from Shading Fields</span>
+        </a>
+        <br>
+				<strong>Xinran Han</strong>, Todd Zickler
+        <br>
+        <em>NeurIPS Workshop on Symmetry and Geometry in Neural Representations (PMLR 228)</em>, 2023
+        <br>
+        <a href="https://openreview.net/pdf?id=4OSJeCAMi6">paper</a>
+        <p></p>
+        <p>
+				We present a neural model for inferring a curvature field from shading images that is invariant under lighting and texture variations, 
+        drawing on perceptual insights and mathematical derivations.
+        </p>
+      </td>
+    </tr>
+
+    <tr onmouseout="bw_stop()" onmouseover="bw_start()">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='bw_image'>
+          <img src="images/blocks_after.png" width="160">
+          </div>
+          <img src='images/blocks_before.png' width="160">
+        </div>
+        <script type="text/javascript">
+          function bw_start() {
+            document.getElementById('bw_image').style.opacity = "1";
+          }
+
+          function bw_stop() {
+            document.getElementById('bw_image').style.opacity = "0";
+          }
+          bw_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://aclanthology.org/2021.findings-emnlp.178/">
+          <span class="papertitle">Compositional Data and Task Augmentation for Instruction Following</span>
+        </a>
+        <br>
+				Soham Dan*
+        <strong>Xinran Han*</strong>, Dan Roth (* equal contribution)
+        <br>
+        <em>Findings of EMNLP</em>, 2021
+        <br>
+        <a href="https://aclanthology.org/2021.findings-emnlp.178/">paper</a>
+        <p></p>
+        <p>
+        Auxiliary objectives and instruction augmentation improve spatial reasoning in the 'blocks world' task, especially under limited data.
+        </p>
+      </td>
+    </tr>
+
+       <tr onmouseout="fork_stop()" onmouseover="fork_start()"  bgcolor="#efeafd">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='fork_image'>
+          <img src="images/fork_after.png" width="160">
+          </div>
+          <img src='images/fork_before.png' width="160">
+        </div>
+        <script type="text/javascript">
+          function fork_start() {
+            document.getElementById('fork_image').style.opacity = "1";
+          }
+
+          function fork_stop() {
+            document.getElementById('fork_image').style.opacity = "0";
+          }
+          fork_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123480154.pdf">
+          <span class="papertitle">ForkGAN: Seeing into the Rainy Night</span>
+        </a>
+        <br>
+		    Ziqiang Zheng, Yang Wu, <strong>Xinran Han</strong>, Jianbo Shi
+        <br>
+        <em>ECCV</em>, 2020 &nbsp <font color="red"><strong>(Oral Presentation)</strong></font>
+        <br>
+        <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123480154.pdf">paper</a>
+        /
+        <a href="https://www.youtube.com/watch?v=O2nxRsSwkzs">talk</a>
+        <p></p>
+        <p>
+		    We introduce a task-agnostic image translation model ForkGAN that effectively disentangle domian-specific and domain-invariant information.
+        </p>
+      </td>
+    </tr>
+
+          </tbody></table>
+
+          
+					<table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
+            <tr>
+              <td>
+                <h2>Miscellaneous</h2>
+                <p>
+                  Outside of research, I enjoy visiting art museums, watching movies and reading about philosophy and psychology.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <p style="text-align:right;font-size:small;">
+                  I'm also using <a href="https://github.com/jonbarron/jonbarron_website">Jon's</a> website template.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
