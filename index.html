@@ -59,6 +59,42 @@
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+    <tr onmouseout="timelapse_stop()" onmouseover="timelapse_start()">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='timelapse_image'><video  width=100% height=100% muted autoplay loop>
+          <source src="images/timelapse_after.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+
+          </video></div>
+          <img src='images/timelapse_before.png' width="160">
+        </div>
+        <script type="text/javascript">
+          function timelapse_start() {
+            document.getElementById('timelapse_image').style.opacity = "1";
+          }
+          function timelapse_stop() {
+            document.getElementById('timelapse_image').style.opacity = "0";
+          }
+          timelapse_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://xrhan.github.io/">
+          <span class="papertitle">From Anyframe to Timelapse: Consistent Video Generation with Representation Alignment</span>
+        </a>
+        <br>
+		<strong>Xinran Nicole Han</strong>, Matias Mendieta, Moein Falahatgar
+        <br>
+        <em>Preprint</em>, 2025 (Work done during internship at Apple.)
+        <br>
+        <a href="https://xrhan.github.io/">blog post (coming soon)</a>
+        <p>
+		    We show that applying derivative representation alignment (dREPA) on image to video generation model improves subject consistency 
+        and leads to better generalization to different artistic styles.
+        </p>
+      </td>
+    </tr>            
 
     <tr onmouseout="diffmotion_stop()" onmouseover="diffmotion_start()"  bgcolor="#efeafd">
       <td style="padding:16px;width:20%;vertical-align:middle">
@@ -74,7 +110,6 @@
           function diffmotion_start() {
             document.getElementById('diffmotion_image').style.opacity = "1";
           }
-
           function diffmotion_stop() {
             document.getElementById('diffmotion_image').style.opacity = "0";
           }
