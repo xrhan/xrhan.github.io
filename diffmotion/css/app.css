@@ -205,3 +205,180 @@ span.highlight {
   border-collapse: separate !important;
   border-spacing: 3rem !important;   /* horizontal + vertical gap */
 }
+
+/* Whole row: [ left video ] [ arrow ] [ right widget ] */
+.video-compare-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* center whole group inside col-md-8 */
+  column-gap: 8px;           /* space between items */
+  max-width: 100%;
+}
+
+/* Left and right get equal flexible width */
+.video-col {
+  flex: 0 0 auto;
+}
+
+/* The actual media (both sides are 512x256 originally) */
+.video-media {
+  width: auto;    /* fill the column width */
+  height: 120px;   /* keep aspect ratio (2:1) */
+  display: block;
+}
+
+/* Comparison container just wraps video + canvas */
+.video-compare-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Arrow column: tiny, doesn’t eat much space */
+.arrow-col {
+  flex: 0 0 28px;          /* small fixed width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Horizontal arrow */
+.arrow-horizontal {
+  width: 100%;
+  height: 2px;
+  background: #333;
+  position: relative;
+}
+
+.arrow-horizontal::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 8px solid #333;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.video-rowrow {
+  display: flex;
+  justify-content: center;   /* 🔑 center the pair inside the col */
+  align-items: flex-start;
+  column-gap: 0.5rem;        /* horizontal spacing between the two videos */
+  margin-bottom: 0.5rem;
+}
+
+.video-item {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Videos: fixed height, width auto (so wide ones are wider) */
+.video-rowrow .video {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Caption styling */
+.video-item figcaption {
+  margin-top: 0.3rem;
+  font-size: 1.4rem;
+  color: #666;
+}
+
+/* Main widget wrapper */
+#comparison-widget {
+  max-width: 100%;
+}
+
+/* Only the active set is shown */
+.comparison-set {
+  display: none;
+}
+.comparison-set.is-active {
+  display: flex;
+}
+
+/* Reuse your previous layout */
+.video-compare-row {
+  align-items: center;
+  column-gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.video-col {
+  flex: 0 0 auto;
+}
+
+.video-media {
+  height: 180px;     /* or whatever you used; same for left & right */
+  width: auto;
+  display: block;
+}
+
+/* Arrow in the middle */
+.arrow-col {
+  flex: 0 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arrow-horizontal {
+  width: 100%;
+  height: 2px;
+  background: #333;
+  position: relative;
+}
+.arrow-horizontal::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 8px solid #333;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+/* Thumb strip at bottom */
+.comparison-thumbs {
+  justify-content: center;   /* center the whole strip */
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.25rem 0;
+  overflow-x: auto;           /* scroll horizontally if too narrow */
+}
+
+.comparison-thumb {
+  border: 1px solid #ddd;
+  background: #f8f8f8;
+  border-radius: 4px;
+  padding: 0.25rem 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.comparison-thumb.is-active {
+  border-color: #333;
+  background: #eee;
+}
+
+.thumb-video {
+  height: 80px;     /* small preview */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.comparison-thumb span {
+  margin-top: 0.2rem;
+  font-size: 1.2rem;
+  color: #555;
+}

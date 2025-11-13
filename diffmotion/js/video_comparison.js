@@ -103,8 +103,7 @@ function playVids(videoId) {
 Number.prototype.clamp = function(min, max) {
   return Math.min(Math.max(this, min), max);
 };
-    
-    
+
 function resizeAndPlay(element)
 {
   var cv = document.getElementById(element.id + "Merge");

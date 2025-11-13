@@ -10,8 +10,8 @@
     margin: 0 auto; 
   }
   .video-box {
-    width: 45%;               /* or any % / px you like */
-    padding-top: 45%;         /* makes the box a square (1:1 aspect) */
+    width: 40%;               /* or any % / px you like */
+    padding-top: 40%;         /* makes the box a square (1:1 aspect) */
     position: relative;
     background: #000;         /* letter-box bars will match this */
   }
@@ -35,12 +35,15 @@
   <link rel="stylesheet" href="css/app.css">
   <!-- Optional: Font Awesome -->
   <link rel="stylesheet" href="css/font-awesome.min.css">
+
+  <script src="js/video_comparison.js"></script>
+  <script src="js/app.js"></script>
 </head>
 <body>
   <div class="container text-center" id="header">
     <h1 id="paper-title">Generative Perception of Shape and Material<br> from Differential Motion<br>
                 <small>
-                    Preprint
+                    NeurIPS 2025
                 </small></h1>
             <div class="row" id="author-row" style="margin:0 auto;">
             <div class="col-md-12 text-center" style="display: table; margin:0 auto">
@@ -76,11 +79,17 @@
                 <div class="col-sm-6 col-sm-offset-3 text-center">
                     <ul class="nav nav-pills nav-justified">
                         <li>
-                            <a href="http://arxiv.org/abs/2506.02473">
+                            <a href="https://openreview.net/pdf/71ee2336c2f9c3274d08e92fd0ccd243cc1cea35.pdf">
                             <img src="./imgs/arxiv.png" height="20px">
                                 <h4><strong>Paper</strong></h4>
                             </a>
-                        </li>                    
+                        </li>
+                        <li>
+                            <a href="https://recorder-v3.slideslive.com/?share=106246&s=5383ea60-5151-4fa9-b576-5da84c192911">
+                            <img src="./imgs/NeurIPS_logo.png" height="20px">
+                                <h4><strong>Slides & Presentation</strong></h4>
+                            </a>
+                        </li>                                               
                         <li>
                             <a href="https://github.com/xrhan/diffmotion">
                             <image src="imgs/github.png" height="20px">
@@ -104,45 +113,264 @@ object to help resolve the ambiguities. Inspired by this behavior, we introduce 
 denoising-diffusion model that generates samples of shape-and-material maps from a short video of an 
 object undergoing differential motions. Our parameter-efficient architecture allows training directly 
 in pixel-space, and it generates many disentangled attributes of an object simultaneously. Trained on 
-a modest number of synthetic object-motion videos with supervision on shape and material, the model 
-exhibits compelling emergent behavior: For static observations, it produces diverse, multimodal 
-predictions of plausible shape-and-material maps that capture the inherent ambiguities; and when 
-objects move, the distributions quickly converge to more accurate explanations. The model also 
-produces high-quality shape-and-material estimates for less ambiguous, real-world objects. By moving 
-beyond single-view to continuous motion observations, our work suggests a generative perception approach 
-for improving visual reasoning in physically-embodied systems.                </p>
+a modest number of synthetic object-motion videos with supervision on shape and material, the model exhibits 
+compelling emergent behavior: For static observations, it produces diverse, multimodal predictions of plausible 
+shape-and-material maps that capture the inherent ambiguities; and when objects move, the distributions converge 
+to more accurate explanations. The model also produces high-quality shape-and-material estimates for less ambiguous, 
+real-world objects. 
+By moving beyond single-view to continuous motion observations, and by using generative perception to capture visual 
+ambiguities, our work suggests ways to improve visual reasoning in physically-embodied systems.                </p>
 
                   <div class="text-center">
-                    <img src="./imgs/setup_figure_v2.png" width="85%">
+                    <img src="./imgs/setup.png" width="65%">
                 </div>
             </div>
         </div>
 
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h3>Qualitative Comparison</h3>
+We compare our model with another video-conditioned baseline - DiffusionRenderer (CVPR 2025) on object centric short videos (three unique frames).
+on a diverse set of synthetic and real videos. The last two objects come from the Stanford-ORB (NeurIPS 2023) dataset.
+<br>
+<br>
+<div id="comparison-widget">
+
+  <!-- MAIN AREA: only one of these is visible at a time -->
+  <div class="comparison-main">
+
+    <!-- Set 1 -->
+    <div class="video-compare-row comparison-set is-active"
+         data-key="cloud">
+      <!-- LEFT: input video -->
+      <div class="video-col">
+        <video class="video-media"
+               loop playsinline muted autoplay
+               src="video/cloud_input.mp4">
+        </video>
+      </div>
+
+      <!-- MIDDLE: arrow -->
+      <div class="arrow-col">
+        <div class="arrow-horizontal"></div>
+      </div>
+
+      <!-- RIGHT: comparison widget -->
+      <div class="video-col">
+        <div class="video-compare-container">
+          <video class="video-media"
+                 id="materials"
+                 loop playsinline muted autoplay
+                 src="video/cloud_side_by_side.mp4"
+                 onplay="resizeAndPlay(this)">
+          </video>
+          <canvas class="video-media videoMerge" id="materialsMerge"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Set 2 -->
+    <div class="video-compare-row comparison-set"
+         data-key="sculptures">
+      <div class="video-col">
+        <video class="video-media"
+               loop playsinline muted autoplay
+               src="video/two_sculptures_input.mp4">
+        </video>
+      </div>
+      <div class="arrow-col">
+        <div class="arrow-horizontal"></div>
+      </div>
+      <div class="video-col">
+        <div class="video-compare-container">
+          <video class="video-media"
+                 id="materials2"
+                 loop playsinline muted autoplay
+                 src="video/two_sculptures_side_by_side.mp4"
+                 onplay="resizeAndPlay(this)">
+          </video>
+          <canvas class="video-media videoMerge" id="materials2Merge"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Set 3 -->
+    <div class="video-compare-row comparison-set"
+         data-key="teapot">
+      <div class="video-col">
+        <video class="video-media"
+               loop playsinline muted autoplay
+               src="video/teapot_input.mp4">
+        </video>
+      </div>
+      <div class="arrow-col">
+        <div class="arrow-horizontal"></div>
+      </div>
+      <div class="video-col">
+        <div class="video-compare-container">
+          <video class="video-media"
+                 id="materials3"
+                 loop playsinline muted autoplay
+                 src="video/teapot_side_by_side.mp4"
+                 onplay="resizeAndPlay(this)">
+          </video>
+          <canvas class="video-media videoMerge" id="materials3Merge"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Set 4 -->
+    <div class="video-compare-row comparison-set"
+         data-key="cactus">
+      <div class="video-col">
+        <video class="video-media"
+               loop playsinline muted autoplay
+               src="video/cactus_input.mp4">
+        </video>
+      </div>
+      <div class="arrow-col">
+        <div class="arrow-horizontal"></div>
+      </div>
+      <div class="video-col">
+        <div class="video-compare-container">
+          <video class="video-media"
+                 id="materials4"
+                 loop playsinline muted autoplay
+                 src="video/cactus_side_by_side.mp4"
+                 onplay="resizeAndPlay(this)">
+          </video>
+          <canvas class="video-media videoMerge" id="materials4Merge"></canvas>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- THUMB STRIP: scrollable selector using left videos as snapshots -->
+  <div class="comparison-thumbs">
+    <button class="comparison-thumb is-active" data-target="cloud">
+      <video class="thumb-video" muted playsinline preload="metadata"
+             src="video/cloud_input.mp4"></video>
+      <span>1. Cloud</span>
+    </button>
+
+    <button class="comparison-thumb" data-target="sculptures">
+      <video class="thumb-video" muted playsinline preload="metadata"
+             src="video/two_sculptures_input.mp4"></video>
+      <span>2. Sculptures</span>
+    </button>
+
+    <button class="comparison-thumb" data-target="teapot">
+      <video class="thumb-video" muted playsinline preload="metadata"
+             src="video/teapot_input.mp4"></video>
+      <span>3. Teapot</span>
+    </button>
+
+    <button class="comparison-thumb" data-target="cactus">
+      <video class="thumb-video" muted playsinline preload="metadata"
+             src="video/cactus_input.mp4"></video>
+      <span>4. Cactus</span>
+    </button>
+  </div>
+</div>
+
+  
+  </div>
+</div>
+
+<div class="row"> 
+  <div class="col-md-8 col-md-offset-2" id="video-section">
+    <h3>Extending to Longer Observations</h3>
+    <!-- Video Placeholder 1 -->
+    <div class="text-justify">
+    We apply temporal consistency guidance on the predictions of the overlapping frame to extend our 
+    model to longer video sequence. 
+    This guided sampling method allows temporally consistent shape and material estimation. 
+    We compare with the shape prediction result from StableNormal, using their official video mode demo.<br><br>
+    </div>
+
+    <!-- ROW 1: videos 1 & 2 -->
+    <div class="video-rowrow">
+      <figure class="video-item">
+        <video
+          class="video"
+          id="l1"
+          loop
+          playsinline
+          autoplay
+          muted
+          src="video/long_dance_fps10.mp4"
+          onplay="resizeAndPlay(this)"
+        ></video>
+        <figcaption>Ours</figcaption>
+      </figure>
+
+      <figure class="video-item">
+        <video
+          class="video"
+          id="l2"
+          loop
+          playsinline
+          autoplay
+          muted
+          src="video/sn_dance.mp4"
+          onplay="resizeAndPlay(this)"
+        ></video>
+        <figcaption>StableNormal</figcaption>
+      </figure>
+    </div>
+
+    <!-- ROW 2: videos 3 & 4 -->
+    <div class="video-rowrow">
+      <figure class="video-item">
+        <video
+          class="video"
+          id="l3"
+          loop
+          playsinline
+          autoplay
+          muted
+          src="video/long_sphere_fps10.mp4"
+          onplay="resizeAndPlay(this)"
+        ></video>
+        <figcaption>Ours</figcaption>
+      </figure>
+
+      <figure class="video-item">
+        <video
+          class="video"
+          id="l4"
+          loop
+          playsinline
+          autoplay
+          muted
+          src="video/sn_sphere.mp4"
+          onplay="resizeAndPlay(this)"
+        ></video>
+        <figcaption>StableNormal</figcaption>
+      </figure>
+    </div>
+
+</div>
+</div>
+
           <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Interdependence of Shape and Material
+                    Motivation - Interdependence & Ambiguity of Shape and Material
                 </h3>
                 <div class="text-justify">
-Interpreting visual inputs requires joint reasoning about shape, texture and reflectance. 
-A static observation of an object can always be explained by a planar shape that has suitable paint or pigment 
-(a `postcard' explanation). It can also be explained by mirror-like shapes that reflect suitable lighting. 
-The set of possibilities is extensive and profoundly ambiguous, but in all of them there is an interplay 
-between shape and material. This suggests that shape and material, which we represent here using 
-reflectance and texture, ought to be inferred simultaneously. We argue that vision systems 
-should embrace and model ambiguities in shape and material, so that other cues like motion or touch 
-can be leveraged when needed for disambiguation. </div>
-                <br>
-                <div class="text-center">
-                    <img src="./imgs/cat_carpet_ai.png" width="65%">
+Different combinations of shapes, materials, and lighting, can give the exact same image so recovering them 
+from the image is inherently ambiguous. At the same time, given observations, different physical attributes 
+are NOT mutually independent and ought to be disentangled jointly. 
+<br>
+</div>
+<div class="text-center">
+                    <img src="./imgs/static_sfs.png" width="55%">
                 </div>
                 <br>
-                <b>Static Object Examples</b>: Multiple shape and material hypotheses on ambiguous online images. 
-                (a) A cat on an illusion carpet that is painted to resemble a hole. 
-                When interpreted as a hole (Sample 1), the predicted albedo is brighter 
-                in the center region (yellow box) than when interpreted as a plane (Sample 2). 
-                (b) A painting of a pumpkin is interpreted as either a 3D shape with orange color 
-                or a planar shape with painted texture. 
+                <b>Static Image Example</b>: Our model shows an emergent ability to provide multiple hypotheses for ambiguous static images, 
+                such as convex, concave and planar `postcard' explanations.
 
             <h4>
               Shiny or Matte Ambiguity
@@ -160,38 +388,31 @@ can be leveraged when needed for disambiguation. </div>
               </div>
             </div>
             <br>
-            <b>Moving Object Examples</b>: An object (such as the teapot or the crossiant shape above), when viewed as a static observation, can be ambiguous. 
+            <b>Video Examples</b>: An object (such as the teapot or the crossiant shape above), when viewed as a static observation, can be ambiguous. 
             Once we see the object in motion, we can often easily perceive the underlying material of the object. In both videos, 
             the object is first rendered with a shiny surface reflecting the environment, and then switches to a diffuse object with painted texture.
-            </div>
+          <br>
+          <br>
+          <b>Prior work</b>: Despite this inherent and fundamental ambiguity 
+of an image, most computer vision systems aim for a single 
+“best” explanation. Deterministic models, or methods that smooth over samples, tend to suppress ambiguity 
+rather than represent it. And by predicting shape or material in isolation, those models overlook other 
+plausible combinations of physical estimates.  
+          
+          </div>
         </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Why Generative Perception?
-                </h3>
-                <div class="text-justify">
-We advocate a generative perception approach, where the vision system generates diverse 
-samples of shapes-and-materials that explain the object appearance captured in the input observations. 
-When the input observation is a single static image, the output samples are expected to be diverse and 
-express ambiguities. Moreover, perception should not be limited to a single view or a single attribute. 
-It should naturally incorporate multiple views as they become available and jointly disentangle the 
-complete physical attributes of object appearance--namely shape, texture, and reflectance--all at the same time. 
-                </div>
-                <br>
-                <div class="text-center">
-                    <img src="./imgs/motion_disambiguation.png" width="90%">
-                </div>
-                <br>
-                <b>Motion Disambiguation Examples</b>: Each plot shows the 2D PCA embedding of 100 albedo samples 
-                corresponding to the frame (inset) that is common between two distinct input videos. 
-                <i>Left:</i> When a shiny teapot moves, the albedo samples converge to a <b>subset</b>
-                of the ones produced for the static teapot. <i>Right:</i> The albedo samples for a 
-                matte-rendered motion video are clearly <b>separated</b> from those of a shiny-rendered video. 
-                Note that spatially-uniform albedos form tighter clusters in PCA space, while highly textured 
-                ones exhibit greater variation.
-            </div>
+
+<div class="row">
+<div class="col-md-8 col-md-offset-2">       
+<h4>
+    Our approach - Generative Perception
+</h4>
+We argue that vision systems 
+should <strong>embrace and model ambiguities</strong> in shape and material, so that other cues like motion or touch 
+can be leveraged when needed for disambiguation. We advocate a <strong>generative perception</strong> approach, where 
+the vision system generates diverse samples of shapes-and-materials that explain the object appearance captured in the input observations.
+<br>
+        </div>
         </div>
 
         <div class="row">
@@ -273,7 +494,7 @@ complete physical attributes of object appearance--namely shape, texture, and re
   
   <div class="row"> 
   <div class="col-md-8 col-md-offset-2" id="video-section">
-    <h3>Motion Disambiguation - Perception Test</h3>
+    <h3>Motion Helps Disambiguation</h3>
     <!-- Video Placeholder 1 -->
     <div class="text-justify">
     Visualization of the shiny/matte perception test designed by Hartung and Kersten. Note in the croissant shape example the static frames can look similar for both the shiny and diffuse material. Motion cues help to disambiguate the materials.<br><br>
@@ -310,103 +531,35 @@ complete physical attributes of object appearance--namely shape, texture, and re
       </figcaption>
     </figure>
   </div>
-</div>
-</div>
-</div>
-
-<div class="row"> 
-  <div class="col-md-8 col-md-offset-2" id="video-section">
-    <h3>Extending to Longer Observations</h3>
-    <!-- Video Placeholder 1 -->
-    <div class="text-justify">
-    We apply temporal consistency guidance on the predictions of the overlapping frame to extend our 
-    model to longer video sequence. 
-    This guided sampling method allows temporally consistent shape and material estimation. 
-    We compare with the shape prediction result from StableNormal, using their official video mode demo.<br><br>
-    </div>
-
-  <div class="row" style="display:flex; gap:1rem;">
-    <!-- 1st video: flex 3 -->
-    <div class="col-md-4 video-wrapper text-center" style="flex:3;">
-      <figure style="margin:0;">
-        <video
-          class="video"
-          id="l1"
-          loop
-          playsinline
-          autoplay
-          muted
-          src="video/long_dance_fps10.mp4"
-          onplay="resizeAndPlay(this)"
-          style="height:78px; width:auto; object-fit:contain; display:block;"
-        ></video>
-        <figcaption style="margin-top:.5rem; font-size:1.4rem; color:#666;">
-          Ours
-        </figcaption>
-      </figure>
-    </div>
-
-    <!-- 2nd video: flex 1 -->
-    <div class="col-md-4 video-wrapper text-center" style="flex:1;">
-      <figure style="margin:0;">
-        <video
-          class="video"
-          id="l2"
-          loop
-          playsinline
-          autoplay
-          muted
-          src="video/sn_dance.mp4"
-          onplay="resizeAndPlay(this)"
-          style="height:78px; width:auto; object-fit:contain; display:block;"
-        ></video>
-        <figcaption style="margin-top:.5rem; font-size:1.4rem; color:#666;">
-          StableNormal
-        </figcaption>
-      </figure>
-    </div>
-
-    <!-- 3rd video: flex 3 -->
-    <div class="col-md-4 video-wrapper text-center" style="flex:3;">
-      <figure style="margin:0;">
-        <video
-          class="video"
-          id="l3"
-          loop
-          playsinline
-          autoplay
-          muted
-          src="video/long_sphere_fps10.mp4"
-          onplay="resizeAndPlay(this)"
-          style="height:78px; width:auto; object-fit:contain; display:block;"
-        ></video>
-        <figcaption style="margin-top:.5rem; font-size:1.4rem; color:#666;">
-          Ours
-        </figcaption>
-      </figure>
-    </div>
-
-    <!-- 4th video: flex 1 -->
-    <div class="col-md-4 video-wrapper text-center" style="flex:1;">
-      <figure style="margin:0;">
-        <video
-          class="video"
-          id="l4"
-          loop
-          playsinline
-          autoplay
-          muted
-          src="video/sn_sphere.mp4"
-          onplay="resizeAndPlay(this)"
-          style="height:78px; width:auto; object-fit:contain; display:block;"
-        ></video>
-        <figcaption style="margin-top:.5rem; font-size:1.4rem; color:#666;">
-          StableNormal
-        </figcaption>
-      </figure>
-    </div>
   </div>
+        <div class="row">
+                <br>
+                <div class="text-center">
+                    <img src="./imgs/motion_disambiguation.png" width="90%">
+                </div>
+                <br>
+                <b>Motion Disambiguation Analysis</b>: Each plot shows the 2D PCA embedding of 100 albedo samples 
+                corresponding to the frame (inset) that is common between two distinct input videos. 
+                <i>Left:</i> When a shiny teapot moves, the albedo samples converge to a <b>subset</b>
+                of the ones produced for the static teapot. <i>Right:</i> The albedo samples for a 
+                matte-rendered motion video are clearly <b>separated</b> from those of a shiny-rendered video. 
+                Note that spatially-uniform albedos form tighter clusters in PCA space, while highly textured 
+                ones exhibit greater variation.
+            </div>
+        </div>
 </div>
+</div>
+
+<div class="row" id="BibTeX">
+  <div class="col-md-8 col-md-offset-2">
+    <h3>BibTeX</h3>
+    <pre><code>@article{han2025generative,
+  title={Generative Perception of Shape and Material from Differential Motion},
+  author={Han, Xinran Nicole and Nishino, Ko and Zickler, Todd},
+  journal={arXiv preprint arXiv:2506.02473},
+  year={2025}
+}</code></pre>
+  </div>
 </div>
 
 <div class="row">
@@ -428,6 +581,58 @@ complete physical attributes of object appearance--namely shape, texture, and re
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/app.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const sets   = document.querySelectorAll('.comparison-set');
+  const thumbs = document.querySelectorAll('.comparison-thumb');
+
+  function activateSet(key) {
+    // Toggle visible set
+    sets.forEach(set => {
+      const isTarget = set.dataset.key === key;
+      set.classList.toggle('is-active', isTarget);
+    });
+
+    // Update thumb styles
+    thumbs.forEach(btn => {
+      btn.classList.toggle('is-active', btn.dataset.target === key);
+    });
+  }
+
+thumbs.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const key = btn.dataset.target;
+    activateSet(key);
+  });
+
+  const tv = btn.querySelector('.thumb-video');
+  if (tv) {
+    tv.addEventListener('loadedmetadata', () => {
+      // Seek to a tiny offset and pause -> browser renders a frame
+      tv.currentTime = 0.001;
+      tv.pause();
+    }, { once: true });
+
+    // Start a tiny play just to allow seeking, then we'll pause
+    tv.play().then(() => {
+      // We'll pause in the loadedmetadata handler after seek
+    }).catch(() => {
+      // If autoplay is blocked, you may still get just the first frame after metadata
+    });
+  }
+});
+
+  // Initial activation (in case no is-active class, default to first)
+  const initial = document.querySelector('.comparison-set.is-active') ||
+                  sets[0];
+  if (initial) {
+    activateSet(initial.dataset.key);
+  }
+});
+
+</script>
+
 </body>
 </html>
 
