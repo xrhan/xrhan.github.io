@@ -196,6 +196,56 @@ on a diverse set of synthetic and real videos. The last two objects come from th
 
     <!-- Set 3 -->
     <div class="video-compare-row comparison-set"
+         data-key="elephant">
+      <div class="video-col">
+        <video class="video-media"
+               loop playsinline muted autoplay
+               src="video/ours_elephant_input.mp4">
+        </video>
+      </div>
+      <div class="arrow-col">
+        <div class="arrow-horizontal"></div>
+      </div>
+      <div class="video-col">
+        <div class="video-compare-container">
+          <video class="video-media"
+                 id="materials3"
+                 loop playsinline muted autoplay
+                 src="video/elephant_side_by_side.mp4"
+                 onplay="resizeAndPlay(this)">
+          </video>
+          <canvas class="video-media videoMerge" id="materials3Merge"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Set 4 -->
+    <div class="video-compare-row comparison-set"
+         data-key="vase">
+      <div class="video-col">
+        <video class="video-media"
+               loop playsinline muted autoplay
+               src="video/ours_vase_input.mp4">
+        </video>
+      </div>
+      <div class="arrow-col">
+        <div class="arrow-horizontal"></div>
+      </div>
+      <div class="video-col">
+        <div class="video-compare-container">
+          <video class="video-media"
+                 id="materials4"
+                 loop playsinline muted autoplay
+                 src="video/vase_side_by_side.mp4"
+                 onplay="resizeAndPlay(this)">
+          </video>
+          <canvas class="video-media videoMerge" id="materials4Merge"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Set 5 -->
+    <div class="video-compare-row comparison-set"
          data-key="teapot">
       <div class="video-col">
         <video class="video-media"
@@ -209,17 +259,17 @@ on a diverse set of synthetic and real videos. The last two objects come from th
       <div class="video-col">
         <div class="video-compare-container">
           <video class="video-media"
-                 id="materials3"
+                 id="materials5"
                  loop playsinline muted autoplay
                  src="video/teapot_side_by_side.mp4"
                  onplay="resizeAndPlay(this)">
           </video>
-          <canvas class="video-media videoMerge" id="materials3Merge"></canvas>
+          <canvas class="video-media videoMerge" id="materials5Merge"></canvas>
         </div>
       </div>
     </div>
 
-    <!-- Set 4 -->
+    <!-- Set 6 -->
     <div class="video-compare-row comparison-set"
          data-key="cactus">
       <div class="video-col">
@@ -234,12 +284,12 @@ on a diverse set of synthetic and real videos. The last two objects come from th
       <div class="video-col">
         <div class="video-compare-container">
           <video class="video-media"
-                 id="materials4"
+                 id="materials6"
                  loop playsinline muted autoplay
                  src="video/cactus_side_by_side.mp4"
                  onplay="resizeAndPlay(this)">
           </video>
-          <canvas class="video-media videoMerge" id="materials4Merge"></canvas>
+          <canvas class="video-media videoMerge" id="materials6Merge"></canvas>
         </div>
       </div>
     </div>
@@ -260,16 +310,28 @@ on a diverse set of synthetic and real videos. The last two objects come from th
       <span>2. Sculptures</span>
     </button>
 
+    <button class="comparison-thumb" data-target="elephant">
+      <video class="thumb-video" muted playsinline preload="metadata"
+             src="video/ours_elephant_input.mp4"></video>
+      <span>3. Elephant</span>
+    </button>
+
+        <button class="comparison-thumb" data-target="vase">
+      <video class="thumb-video" muted playsinline preload="metadata"
+             src="video/ours_vase_input.mp4"></video>
+      <span>4. Vase</span>
+    </button>
+
     <button class="comparison-thumb" data-target="teapot">
       <video class="thumb-video" muted playsinline preload="metadata"
              src="video/teapot_input.mp4"></video>
-      <span>3. Teapot</span>
+      <span>5. Teapot</span>
     </button>
 
     <button class="comparison-thumb" data-target="cactus">
       <video class="thumb-video" muted playsinline preload="metadata"
              src="video/cactus_input.mp4"></video>
-      <span>4. Cactus</span>
+      <span>6. Cactus</span>
     </button>
   </div>
 </div>
@@ -480,10 +542,10 @@ the vision system generates diverse samples of shapes-and-materials that explain
         <video class="video" id="e1" loop playsinline autoPlay muted src="video/ducky.mp4" onplay="resizeAndPlay(this)"></video>
       </div>
       <div class="col-md-4 video-wrapper text-center">
-        <video class="video" id="e2" loop playsinline autoPlay muted src="video/elephant.mp4" onplay="resizeAndPlay(this)"></video>
+        <video class="video" id="e2" loop playsinline autoPlay muted src="video/ours_blue_vase.mp4" onplay="resizeAndPlay(this)"></video>
       </div>
       <div class="col-md-4 video-wrapper text-center">
-        <video class="video" id="e3" loop playsinline autoPlay muted src="video/vase.mp4" onplay="resizeAndPlay(this)"></video>
+        <video class="video" id="e3" loop playsinline autoPlay muted src="video/ours_frother.mp4" onplay="resizeAndPlay(this)"></video>
       </div>
     </div>
 
