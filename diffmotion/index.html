@@ -130,8 +130,9 @@ ambiguities, our work suggests ways to improve visual reasoning in physically-em
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <h3>Qualitative Comparison</h3>
-We compare our model with another video-conditioned baseline - DiffusionRenderer (CVPR 2025) on object centric short videos (three unique frames).
-on a diverse set of synthetic and real videos. The last two objects come from the Stanford-ORB (NeurIPS 2023) dataset.
+Here we compare to DiffusionRenderer (CVPR 2025), another video-conditioned model that can output depth and normals. 
+Objects 5 and 6 are from the Stanford-ORB dataset (NeurIPS 2023); the input comes from irregular camera motion 
+that is different from the horizontal object motion that we use for training.
 <br>
 <br>
 <div id="comparison-widget">
@@ -424,15 +425,15 @@ on a diverse set of synthetic and real videos. The last two objects come from th
                 <div class="text-justify">
 Different combinations of shapes, materials, and lighting, can give the exact same image so recovering them 
 from the image is inherently ambiguous. At the same time, given observations, different physical attributes 
-are NOT mutually independent and ought to be disentangled jointly. 
+are NOT mutually independent and ought to be disentangled jointly.
 <br>
 </div>
 <div class="text-center">
-                    <img src="./imgs/static_sfs.png" width="55%">
+                    <img src="./imgs/static_sfs.png" width="65%">
                 </div>
                 <br>
-                <b>Static Image Example</b>: Our model shows an emergent ability to provide multiple hypotheses for ambiguous static images, 
-                such as convex, concave and planar `postcard' explanations.
+                <b>Static Image Example</b>: A single image can be exactly be explained by many different combinations of shapes, materials and lighting. 
+                When we give our model a single static image, it captures this ambiguity by producing diverse samples.
 
             <h4>
               Shiny or Matte Ambiguity
@@ -551,7 +552,6 @@ the vision system generates diverse samples of shapes-and-materials that explain
 
   </div>
   </div>
-  
   
   
   <div class="row"> 

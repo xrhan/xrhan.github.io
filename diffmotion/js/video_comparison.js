@@ -6,12 +6,11 @@ function playVids(videoId) {
     var videoMerge = document.getElementById(videoId + "Merge");
     var vid = document.getElementById(videoId);
 
-    var position = 0.5;
+    var position = 0.25;
     var vidWidth = vid.videoWidth/2;
     var vidHeight = vid.videoHeight;
 
     var mergeContext = videoMerge.getContext("2d");
-
     
     if (vid.readyState > 3) {
         vid.play();
@@ -92,8 +91,6 @@ function playVids(videoId) {
 
             mergeContext.fillStyle = "#444444";
             mergeContext.fill();
-
-            
             
         }
         requestAnimationFrame(drawLoop);
