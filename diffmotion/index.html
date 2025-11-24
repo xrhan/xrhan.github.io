@@ -2,27 +2,44 @@
 <html lang="en">
 
 <style>
+  /* MAIN CONTAINER */
   .video-row {
     display: flex;
-    justify-content: space-between;
-    gap: 5rem;                /* space between the two videos */
-    width: 55%;              /* <-- limit the entire row to 75% of page */
-    margin: 0 auto; 
+    justify-content: center;  /* Centers the whole group on page */
+    
+    /* --- CONTROLLABLE MARGIN SETTINGS --- */
+    gap: 3rem;                /* Change this to increase/decrease space between videos */
+    width: 60%;               /* Set to 100% for full width, or less to shrink */
+    /* ------------------------------------ */
+    
+    margin: 0 auto;           /* Centers the row horizontally */
   }
-  .video-box {
-    width: 40%;               /* or any % / px you like */
-    padding-top: 40%;         /* makes the box a square (1:1 aspect) */
-    position: relative;
-    background: #000;         /* letter-box bars will match this */
+
+  /* COLUMNS */
+  .video-col {
+    flex: 1;                  /* Forces all 3 items to be exactly the same size */
+    display: flex;
+    flex-direction: column;   /* Stacks text on top of video */
   }
+
+  /* LABELS */
+  .video-label {
+    text-align: center;
+    font-size: 1.8rem;        /* Made font slightly larger */
+    margin-bottom: 10px;
+    font-family: Lato;
+    color: #333;
+  }
+
+  /* CONTENT (Video/Img) */
   .video-box video {
-    position: absolute;
-    top: 50%; left: 50%;
-    /* make the video fill the container as much as possible without cropping */
-    max-width: 100%;
-    max-height: 100%;
-    transform: translate(-50%, -50%);
+    height: 120px;
+  }
+  .video-box img {
+    width: auto;
+    height: 120px;
     object-fit: contain;
+    display: block;
   }
 </style>
 
@@ -436,33 +453,57 @@ are NOT mutually independent and ought to be disentangled jointly.
                 When we give our model a single static image, it captures this ambiguity by producing diverse samples.
 
             <h4>
-              Shiny or Matte Ambiguity
-            (by
-            <a href="https://kerstenlab.psych.umn.edu/demos/motion-surface/" target="_blank" rel="noopener">
-              Hartung &amp; Kersten
-            </a>
-            )</h4>
+              Motion Helps Disambiguation
+            </h4>
+          
             <div class="video-row">
+            <div class="video-col">
+              <div class="video-label">Static</div>
               <div class="video-box">
-                <video src="./video/perception1.mp4" controls></video>
-              </div>
-              <div class="video-box">
-                <video src="./video/perception2.mp4" controls></video>
+                <img src="./imgs/pot_static.png" alt="Static Result">
               </div>
             </div>
-            <br>
-            <b>Video Examples</b>: An object (such as the teapot or the crossiant shape above), when viewed as a static observation, can be ambiguous. 
-            Once we see the object in motion, we can often easily perceive the underlying material of the object. In both videos, 
-            the object is first rendered with a shiny surface reflecting the environment, and then switches to a diffuse object with painted texture.
-          <br>
-          <br>
-          <b>Prior work</b>: Despite this inherent and fundamental ambiguity 
-of an image, most computer vision systems aim for a single 
-“best” explanation. Deterministic models, or methods that smooth over samples, tend to suppress ambiguity 
-rather than represent it. And by predicting shape or material in isolation, those models overlook other 
-plausible combinations of physical estimates.  
-          
+
+            <div class="video-col">
+              <div class="video-label">Diffuse</div>
+              <div class="video-box">
+                <video src="./video/pot_vid_diffuse.mp4" controls muted loop></video>
+              </div>
+            </div>
+
+            <div class="video-col">
+              <div class="video-label">Shiny</div>
+              <div class="video-box">
+                <video src="./video/pot_vid_shiny.mp4" controls muted loop></video>
+              </div>
+            </div>
           </div>
+
+            <br>
+            <b>Video Examples</b>: An object (such as the teapot), when viewed as a static observation, can be ambiguous. 
+            Once we see the object in motion, we can often easily perceive the underlying material of the object, such as whether 
+            it is diffuse with painted texture or shiny and reflecting the environment.
+            (Video by
+            <a href="https://kerstenlab.psych.umn.edu/demos/motion-surface/" target="_blank" rel="noopener">
+              Hartung &amp; Kersten </a>)
+          <br>
+
+<div class="row">
+                <br>
+                <div class="text-center">
+                          <video
+        class="video" id="panel" loop playsinline autoplay muted src="video/pot_panel.m4v" onplay="resizeAndPlay(this)"
+        style="height:200px; width:auto; object-fit:contain; display:block; margin:0 auto;"></video>
+                </div>
+                <br>
+                <b>Motion Disambiguation Analysis</b>: We visualize the 2D PCA embedding of 100 albedo samples 
+                corresponding to the frame that is common between two distinct input videos. 
+                When a shiny teapot moves, the albedo samples converge to a <b>subset</b>
+                of the ones produced for the static teapot.
+            </div>
+        </div>
+</div>
+          <br>
         </div>
 
 <div class="row">
@@ -470,6 +511,12 @@ plausible combinations of physical estimates.
 <h4>
     Our approach - Generative Perception
 </h4>
+<b>Prior work</b>: Despite this inherent and fundamental ambiguity 
+of an image, most computer vision systems aim for a single 
+“best” explanation. Deterministic models, or methods that smooth over samples, tend to suppress ambiguity 
+rather than represent it. And by predicting shape or material in isolation, those models overlook other 
+plausible combinations of physical estimates.  
+<br><br>
 We argue that vision systems 
 should <strong>embrace and model ambiguities</strong> in shape and material, so that other cues like motion or touch 
 can be leveraged when needed for disambiguation. We advocate a <strong>generative perception</strong> approach, where 
@@ -504,7 +551,7 @@ the vision system generates diverse samples of shapes-and-materials that explain
       <div class="text-justify">
       We visualize the input video sequence, predicted surface normal and albedo (diffuse color) from a moving object. 
       Input videos are synthetically rendered using physics-based rendering engine (1,2) or captured real world objects (3).<br><br>
-      (1) Objects with synthetic textures:<br><br>
+      (1) Objects with synthetic textures:<br>
     </div>
     <!-- Row of 3 videos -->
     <div class="row">
@@ -522,7 +569,7 @@ the vision system generates diverse samples of shapes-and-materials that explain
     <!-- Add more <div class="row"> blocks if you have additional videos -->
         <!-- Row of 3 videos -->
       <div class="text-justify">
-      <br> (2) Objects with original, artists' designed textures:<br><br>
+      (2) Objects with original, artists' designed textures:<br>
     </div>
     <div class="row">
       <div class="col-md-4 video-wrapper text-center">
@@ -536,7 +583,7 @@ the vision system generates diverse samples of shapes-and-materials that explain
       </div>
     </div>
 
-      (3) Captured real-world objects motion videos:<br><br>
+    (3) Captured real-world objects motion videos:<br>
     <!-- Row of 3 videos -->
     <div class="row">
       <div class="col-md-4 video-wrapper text-center">
@@ -549,66 +596,7 @@ the vision system generates diverse samples of shapes-and-materials that explain
         <video class="video" id="e3" loop playsinline autoPlay muted src="video/ours_frother.mp4" onplay="resizeAndPlay(this)"></video>
       </div>
     </div>
-
-  </div>
-  </div>
-  
-  
-  <div class="row"> 
-  <div class="col-md-8 col-md-offset-2" id="video-section">
-    <h3>Motion Helps Disambiguation</h3>
-    <!-- Video Placeholder 1 -->
-    <div class="text-justify">
-    Visualization of the shiny/matte perception test designed by Hartung and Kersten. Note in the croissant shape example the static frames can look similar for both the shiny and diffuse material. Motion cues help to disambiguate the materials.<br><br>
-    </div>
-<div class="row">
-  <div class="col-md-4 video-wrapper text-center">
-    <figure style="margin:0;">
-      <video
-        class="video" id="p1" loop playsinline autoplay muted src="video/pot_shiny.mp4" onplay="resizeAndPlay(this)"
-        style="height:75px; width:auto; object-fit:contain; display:block;"></video>
-      <figcaption style="margin-top:.5rem; font-size:1.4rem; color:#666;">
-        Pot (shiny)
-      </figcaption>
-    </figure>
-  </div>
-  <div class="col-md-4 video-wrapper text-center">
-    <figure style="margin:0;">
-      <video
-        class="video" id="p2" loop playsinline autoplay muted src="video/croissant_shiny.mp4" onplay="resizeAndPlay(this)"
-        style="height:75px; width:auto; object-fit:contain; display:block;"></video>
-      <figcaption style="margin-top:.5rem; font-size:1.4rem; color:#666;">
-        Croissant (shiny)
-      </figcaption>
-    </figure>
-  </div>
-  <div class="col-md-4 video-wrapper text-center">
-    <figure style="margin:0;">
-      <video
-        class="video" id="p3" loop playsinline autoplay muted src="video/croissant_diffuse.mp4" onplay="resizeAndPlay(this)"
-        style="height:75px; width:auto; object-fit:contain; display:block;"
-      ></video>
-      <figcaption style="margin-top:.5rem; font-size:1.4rem; color:#666;">
-        Croissant (diffuse)
-      </figcaption>
-    </figure>
-  </div>
-  </div>
-        <div class="row">
-                <br>
-                <div class="text-center">
-                    <img src="./imgs/motion_disambiguation.png" width="90%">
-                </div>
-                <br>
-                <b>Motion Disambiguation Analysis</b>: Each plot shows the 2D PCA embedding of 100 albedo samples 
-                corresponding to the frame (inset) that is common between two distinct input videos. 
-                <i>Left:</i> When a shiny teapot moves, the albedo samples converge to a <b>subset</b>
-                of the ones produced for the static teapot. <i>Right:</i> The albedo samples for a 
-                matte-rendered motion video are clearly <b>separated</b> from those of a shiny-rendered video. 
-                Note that spatially-uniform albedos form tighter clusters in PCA space, while highly textured 
-                ones exhibit greater variation.
-            </div>
-        </div>
+        
 </div>
 </div>
 
@@ -633,7 +621,7 @@ the vision system generates diverse samples of shapes-and-materials that explain
           We thank Jianbo Shi for reviewing the manuscript. We also thank Kohei Yamashita for guidance about the data rendering pipeline and Boyuan Chen for discussion 
           about video diffusion modeling. This work was supported in part by the NSF cooperative agreement PHY-2019786 (an NSF AI Institute, <a href="http://iaifi.org">http://iaifi.org</a>) 
           and by JSPS 21H04893 and JST JPMJAP2305.
-        <br>
+        <br><br>
         The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
         </p>
     </div>
