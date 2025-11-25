@@ -314,7 +314,7 @@ span.highlight {
 }
 
 .video-media {
-  height: 180px;     /* or whatever you used; same for left & right */
+  height: clamp(150px, 12vh, 200px);     /* or whatever you used; same for left & right */
   width: auto;
   display: block;
 }

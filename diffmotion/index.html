@@ -32,12 +32,10 @@
   }
 
   /* CONTENT (Video/Img) */
-  .video-box video {
-    height: 120px;
-  }
+  .video-box video,
   .video-box img {
     width: auto;
-    height: 120px;
+    height: clamp(100px, 12vh, 150px);
     object-fit: contain;
     display: block;
   }
@@ -492,7 +490,14 @@ are NOT mutually independent and ought to be disentangled jointly.
                 <br>
                 <div class="text-center">
                           <video
-        class="video" id="panel" loop playsinline autoplay muted src="video/pot_panel.m4v" onplay="resizeAndPlay(this)"
+        class="video" id="panel" loop playsinline autoplay muted src="video/pot_panel.m4v" 
+        style="
+        display:block;
+        margin:0 auto;
+        width:60vw;
+        max-width:800px;
+        height:auto;
+        object-fit:contain;" onplay="resizeAndPlay(this)"
         style="height:200px; width:auto; object-fit:contain; display:block; margin:0 auto;"></video>
                 </div>
                 <br>
