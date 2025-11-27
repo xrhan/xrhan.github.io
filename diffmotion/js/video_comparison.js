@@ -6,95 +6,91 @@ function playVids(videoId) {
     var videoMerge = document.getElementById(videoId + "Merge");
     var vid = document.getElementById(videoId);
 
-    var position = 0.25;
-    var vidWidth = vid.videoWidth/2;
+    var position = 0.5;
+    var vidWidth = vid.videoWidth / 2;
     var vidHeight = vid.videoHeight;
 
     var mergeContext = videoMerge.getContext("2d");
-    
+
     if (vid.readyState > 3) {
         vid.play();
 
         function trackLocation(e) {
-            // Normalize to [0, 1]
-            bcr = videoMerge.getBoundingClientRect();
-            position = ((e.pageX - bcr.x) / bcr.width);
+            // FIX: Use clientY (viewport) instead of pageY (document)
+            // and bcr.top instead of bcr.y for better browser compatibility
+            var bcr = videoMerge.getBoundingClientRect();
+            position = ((e.clientY - bcr.top) / bcr.height);
         }
+
         function trackLocationTouch(e) {
-            // Normalize to [0, 1]
-            bcr = videoMerge.getBoundingClientRect();
-            position = ((e.touches[0].pageX - bcr.x) / bcr.width);
+            // FIX: Use clientY for touch as well
+            var bcr = videoMerge.getBoundingClientRect();
+            position = ((e.touches[0].clientY - bcr.top) / bcr.height);
         }
 
-        videoMerge.addEventListener("mousemove",  trackLocation, false); 
+        videoMerge.addEventListener("mousemove", trackLocation, false);
         videoMerge.addEventListener("touchstart", trackLocationTouch, false);
-        videoMerge.addEventListener("touchmove",  trackLocationTouch, false);
-
+        videoMerge.addEventListener("touchmove", trackLocationTouch, false);
 
         function drawLoop() {
+            // 1. Draw Base (Left Video)
             mergeContext.drawImage(vid, 0, 0, vidWidth, vidHeight, 0, 0, vidWidth, vidHeight);
-            var colStart = (vidWidth * position).clamp(0.0, vidWidth);
-            var colWidth = (vidWidth - (vidWidth * position)).clamp(0.0, vidWidth);
-            mergeContext.drawImage(vid, colStart+vidWidth, 0, colWidth, vidHeight, colStart, 0, colWidth, vidHeight);
-            requestAnimationFrame(drawLoop);
 
-            
+            // 2. Calculate Split
+            var currY = (vidHeight * position).clamp(0.0, vidHeight);
+            var remainingHeight = vidHeight - currY;
+
+            // 3. Draw Overlay (Right Video)
+            if (remainingHeight > 0) {
+                mergeContext.drawImage(vid, 
+                    vidWidth, currY, vidWidth, remainingHeight, 
+                    0, currY, vidWidth, remainingHeight
+                );
+            }
+
+            // --- UI DRAWING ---
             var arrowLength = 0.09 * vidHeight;
             var arrowheadWidth = 0.025 * vidHeight;
             var arrowheadLength = 0.04 * vidHeight;
-            var arrowPosY = vidHeight / 10;
+            var arrowPosX = vidWidth / 2; 
             var arrowWidth = 0.007 * vidHeight;
-            var currX = vidWidth * position;
 
-            // Draw circle
-            mergeContext.arc(currX, arrowPosY, arrowLength*0.7, 0, Math.PI * 2, false);
-            mergeContext.fillStyle = "#FFD79340";
-            mergeContext.fill()
-            //mergeContext.strokeStyle = "#444444";
-            //mergeContext.stroke()
-            
-            // Draw border
+            // Circle
             mergeContext.beginPath();
-            mergeContext.moveTo(vidWidth*position, 0);
-            mergeContext.lineTo(vidWidth*position, vidHeight);
-            mergeContext.closePath()
+            mergeContext.arc(arrowPosX, currY, arrowLength * 0.7, 0, Math.PI * 2, false);
+            mergeContext.fillStyle = "#FFD79340";
+            mergeContext.fill();
+
+            // Line
+            mergeContext.beginPath();
+            mergeContext.moveTo(0, currY);
+            mergeContext.lineTo(vidWidth, currY);
             mergeContext.strokeStyle = "#444444";
-            mergeContext.lineWidth = 5;            
+            mergeContext.lineWidth = 5;
             mergeContext.stroke();
 
-            // Draw arrow
+            // Arrow
             mergeContext.beginPath();
-            mergeContext.moveTo(currX, arrowPosY - arrowWidth/2);
-            
-            // Move right until meeting arrow head
-            mergeContext.lineTo(currX + arrowLength/2 - arrowheadLength/2, arrowPosY - arrowWidth/2);
-            
-            // Draw right arrow head
-            mergeContext.lineTo(currX + arrowLength/2 - arrowheadLength/2, arrowPosY - arrowheadWidth/2);
-            mergeContext.lineTo(currX + arrowLength/2, arrowPosY);
-            mergeContext.lineTo(currX + arrowLength/2 - arrowheadLength/2, arrowPosY + arrowheadWidth/2);
-            mergeContext.lineTo(currX + arrowLength/2 - arrowheadLength/2, arrowPosY + arrowWidth/2);
-
-            // Go back to the left until meeting left arrow head
-            mergeContext.lineTo(currX - arrowLength/2 + arrowheadLength/2, arrowPosY + arrowWidth/2);
-            
-            // Draw left arrow head
-            mergeContext.lineTo(currX - arrowLength/2 + arrowheadLength/2, arrowPosY + arrowheadWidth/2);
-            mergeContext.lineTo(currX - arrowLength/2, arrowPosY);
-            mergeContext.lineTo(currX - arrowLength/2 + arrowheadLength/2, arrowPosY  - arrowheadWidth/2);
-            mergeContext.lineTo(currX - arrowLength/2 + arrowheadLength/2, arrowPosY);
-            
-            mergeContext.lineTo(currX - arrowLength/2 + arrowheadLength/2, arrowPosY - arrowWidth/2);
-            mergeContext.lineTo(currX, arrowPosY - arrowWidth/2);
-
+            mergeContext.moveTo(arrowPosX - arrowWidth / 2, currY);
+            mergeContext.lineTo(arrowPosX - arrowWidth / 2, currY - arrowLength / 2 + arrowheadLength / 2);
+            mergeContext.lineTo(arrowPosX - arrowheadWidth / 2, currY - arrowLength / 2 + arrowheadLength / 2);
+            mergeContext.lineTo(arrowPosX, currY - arrowLength / 2);
+            mergeContext.lineTo(arrowPosX + arrowheadWidth / 2, currY - arrowLength / 2 + arrowheadLength / 2);
+            mergeContext.lineTo(arrowPosX + arrowWidth / 2, currY - arrowLength / 2 + arrowheadLength / 2);
+            mergeContext.lineTo(arrowPosX + arrowWidth / 2, currY + arrowLength / 2 - arrowheadLength / 2);
+            mergeContext.lineTo(arrowPosX + arrowheadWidth / 2, currY + arrowLength / 2 - arrowheadLength / 2);
+            mergeContext.lineTo(arrowPosX, currY + arrowLength / 2);
+            mergeContext.lineTo(arrowPosX - arrowheadWidth / 2, currY + arrowLength / 2 - arrowheadLength / 2);
+            mergeContext.lineTo(arrowPosX - arrowWidth / 2, currY + arrowLength / 2 - arrowheadLength / 2);
+            mergeContext.lineTo(arrowPosX - arrowWidth / 2, currY);
             mergeContext.closePath();
-
             mergeContext.fillStyle = "#444444";
             mergeContext.fill();
-            
+
+            requestAnimationFrame(drawLoop);
         }
         requestAnimationFrame(drawLoop);
-    } 
+    }
 }
 
 Number.prototype.clamp = function(min, max) {
