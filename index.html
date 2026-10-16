@@ -38,6 +38,14 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
 .section{padding:48px 0;border-top:1px solid var(--border-light);scroll-margin-top:80px}
 .section:first-child{border-top:none}
 .section-title{font-family:'DM Sans',sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:-.01em;color:var(--text);margin-bottom:24px}
+.section-heading{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:24px}
+.section-heading .section-title{margin-bottom:0}
+.research-filter{display:flex;align-items:baseline;gap:8px;font-family:'DM Sans',sans-serif;font-size:.78rem;color:var(--text-tertiary)}
+.research-filter button{appearance:none;background:none;border:0;padding:4px 0;font:inherit;color:var(--text-secondary);cursor:pointer;white-space:nowrap}
+.research-filter button:hover{color:var(--accent)}
+.research-filter button[aria-pressed="true"]{color:var(--accent);font-weight:600}
+.research-filter button:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:2px}
+.pub-card[hidden]{display:none}
 .section-intro{font-size:.95rem;color:var(--text-secondary);margin-bottom:24px;line-height:1.7}
 .section-intro .highlight{background:var(--highlight);padding:1px 5px;border-radius:3px}
 .pub-card{display:grid;grid-template-columns:160px 1fr;gap:20px;padding:20px 16px;margin:0 -16px 6px;border-bottom:1px solid var(--border-light);transition:background .2s;border-radius:10px}
@@ -114,17 +122,46 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
 <div class="main-content">
 
   <div class="section" id="research">
-    <div class="section-title">Research</div>
+    <div class="section-heading">
+      <div class="section-title">Research</div>
+      <div class="research-filter" role="group" aria-label="Research paper selection">
+        <button type="button" data-filter="selected" aria-pressed="true">Show selected</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" data-filter="all" aria-pressed="false">Show all</button>
+      </div>
+    </div>
     <p class="section-intro">My current research interests are multimodal learning, agents, and reasoning. My PhD work centered on generative modeling and 3D computer vision.
       I work across the full research stack, from data generation and model architecture design to large-scale training and post-training. 
       Some papers are <span class="highlight">highlighted</span>.</p>
+
+    <div class="pub-card highlighted">
+      <div class="pub-thumb"><img src="images/adaloop.png" alt="AdaLoop: question-conditioned perception loops in the vision encoder"></div>
+      <div class="pub-info">
+        <div class="pub-title"><a href="https://arxiv.org/pdf/2610.21323">AdaLoop: Thinking with the Vision Encoder</a></div>
+        <div class="pub-authors"><strong>Xinran (Nicole) Han*</strong>, Yiyang Lu*, Katelyn Gan, Todd Zickler</div>
+        <div class="pub-venue-row"><span class="pub-venue">Preprint, 2026</span></div>
+        <p class="pub-desc">We introduce a <em>looped vision encoder</em> for multimodal reasoning in VLMs with question-conditioning and adaptive inference time compute.</p>
+        <div class="pub-links"><a href="https://arxiv.org/pdf/2610.21323">paper</a><a href="images/presentation_pdf.pdf">slides</a></div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-selected="false" hidden>
+      <div class="pub-thumb"><img src="images/onesun.png" alt="Under One Sun: object textures, reflectance, and shared illumination from a single image"></div>
+      <div class="pub-info">
+        <div class="pub-title"><a href="https://vision.ist.i.kyoto-u.ac.jp/research/onesun/">Under One Sun: Multi-Object Generative Perception of Materials and Illumination</a></div>
+        <div class="pub-authors">Nobuo Yoshii, <strong>Xinran (Nicole) Han</strong>, Ryo Kawahara, Todd Zickler, Ko Nishino</div>
+        <div class="pub-venue-row"><span class="pub-venue">ECCV, 2026</span></div>
+        <p class="pub-desc">We introduce <em>Multi-Object Generative Perception (MultiGP)</em>, which samples object textures, reflectance, and shared illumination from a single image of known shapes.</p>
+        <div class="pub-links"><a href="https://vision.ist.i.kyoto-u.ac.jp/research/onesun/">project page</a><a href="https://arxiv.org/pdf/2603.19226">paper</a></div>
+      </div>
+    </div>
 
     <div class="pub-card">
       <div class="pub-thumb"><img src="images/timelapse_before.png" alt=""><video class="hover-media" muted autoplay loop><source src="images/timelapse_after.mp4" type="video/mp4"></video></div>
       <div class="pub-info">
         <div class="pub-title"><a href="https://xrhan.github.io/timelapse/">From Anyframe to Timelapse: Consistent Video Generation with Representation Alignment</a></div>
         <div class="pub-authors"><strong>Xinran (Nicole) Han</strong>, Matias Mendieta, Moein Falahatgar</div>
-        <div class="pub-venue-row"><span class="pub-venue">Preprint, 2025 · Work done during internship at Apple</span></div>
+        <div class="pub-venue-row"><span class="pub-venue">Technical report, 2025 · Work done during internship at Apple</span></div>
         <p class="pub-desc">We introduce <em>derivative representation alignment (dREPA)</em> for image-to-video generation and show it improves subject consistency and leads to better generalization across artistic styles.</p>
         <div class="pub-links"><a href="https://xrhan.github.io/timelapse/">blog post</a></div>
       </div>
@@ -152,7 +189,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
       </div>
     </div>
 
-    <div class="pub-card">
+    <div class="pub-card" data-selected="false" hidden>
       <div class="pub-thumb"><img src="images/gp.png" alt=""></div>
       <div class="pub-info">
         <div class="pub-title"><a href="https://arxiv.org/abs/2309.16597">Transfer Learning for Bayesian Optimization on Heterogeneous Search Spaces</a></div>
@@ -222,6 +259,18 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
 </footer>
 
 <script>
+document.querySelectorAll('.research-filter button').forEach(function(button){
+  button.addEventListener('click',function(){
+    var showAll=button.dataset.filter==='all';
+    document.querySelectorAll('#research .pub-card').forEach(function(card){
+      card.hidden=!showAll&&card.dataset.selected==='false';
+    });
+    document.querySelectorAll('.research-filter button').forEach(function(option){
+      option.setAttribute('aria-pressed',String(option===button));
+    });
+  });
+});
+
 function toggleTheme(){var h=document.documentElement;var d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'':'dark');localStorage.setItem('theme',d?'light':'dark')}
 if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark')}
 
